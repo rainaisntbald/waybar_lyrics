@@ -80,7 +80,7 @@ while true; do
                 echo "      $api_url"
             fi
 
-            response=$(curl -s "$api_url")
+            response=$(curl -s -H "User-Agent: waybar_lyrics (https://github.com/rainaisntbald/waybar_lyrics)" "$api_url")
             echo "$response" > "$cache_file"
         fi
 

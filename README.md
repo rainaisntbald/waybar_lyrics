@@ -7,16 +7,17 @@ It fetches the lyrics using the API at https://lrclib.net/ and, if they are foun
 
 ## How do I use it?
 
-- Install the lyrics.sh script and place it somewhere safe.
+- Install the lyrics.sh script, place it somewhere safe, and `chmod +x lyrics.sh` it
 - Add something along the lines of the following as a waybar module:
 ```json
 "custom/lyrics": {
-    "exec": "stdbuf -oL ./lyrics.sh",
+    "exec": "stdbuf -oL /path/to/lyrics.sh",
     "format": "{}"
 },
 ```
 - Add the module to your waybar's config
 - You now have lyrics!
+- You can go into the lyrics.sh to adjust the maximum characters it will show if it appears too long on your waybar
 
 ## What does it depend on?
 
