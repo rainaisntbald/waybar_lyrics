@@ -7,7 +7,7 @@ It fetches the lyrics using the API at https://lrclib.net/ and, if they are foun
 
 ## How do I use it?
 
-- Install the lyrics.sh script, place it somewhere safe, and `chmod +x lyrics.sh` it
+- Download the lyrics.sh script, place it somewhere safe, and `chmod +x lyrics.sh` it
 - Add something along the lines of the following as a waybar module:
 ```json
 "custom/lyrics": {
