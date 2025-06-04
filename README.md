@@ -1,4 +1,6 @@
 # Waybar Lyrics
+![image](https://github.com/user-attachments/assets/dd7c0fe0-ede8-4c3f-8057-20e08675edec)
+
 An extremely simple waybar lyric displayer
 
 ## How does it work?
