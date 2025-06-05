@@ -23,7 +23,7 @@ It fetches the lyrics using the API at https://lrclib.net/ and, if they are foun
 
 ## What does it depend on?
 
-It relies on playerctl to fetch the current track being played, and an internet connection to fetch the lyrics.
+It relies on playerctl to fetch the current track being played, jq to parse the json response, and an internet connection to fetch the lyrics.
 
 ## It isn't working!
 
