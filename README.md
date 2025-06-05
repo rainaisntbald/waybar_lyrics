@@ -5,7 +5,7 @@ An extremely simple waybar lyric displayer
 
 ## How does it work?
 
-It fetches the lyrics using the API at https://lrclib.net/ and, if they are found, displays them at the correct time using the timestamps available.
+It fetches the lyrics using the API at https://lrclib.net/ for the currently plaiying song (according to playerctl) and, if they are found, displays them at the correct time using the timestamps available.
 
 ## How do I use it?
 
