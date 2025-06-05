@@ -71,8 +71,14 @@ while true; do
                 echo "    [cache miss] fetching from API…"
             fi
 
+            echo "🎶 $(truncate_text "$title - $artist")"
+
+            sleep 2 # Sleep to allow playerctl to update metadata fully, avoids incorrect api calls
+
             artist_encoded=$(printf "%s" "$artist" | jq -sRr @uri)
             title_encoded=$(printf "%s" "$title" | jq -sRr @uri)
+            duration=$(playerctl metadata mpris:length 2>/dev/null || echo 0)
+            duration_sec=$(awk "BEGIN {print int($duration / 1000000)}")
 
             api_url="https://lrclib.net/api/get?artist_name=${artist_encoded}&track_name=${title_encoded}&duration=${duration_sec}"
             if (( debug )); then
@@ -81,6 +87,7 @@ while true; do
             fi
 
             response=$(curl -s -H "User-Agent: waybar_lyrics (https://github.com/rainaisntbald/waybar_lyrics)" "$api_url")
+            response=$(echo "$response" | jq --arg url "$api_url" '. + {request_url: $url}')
             echo "$response" > "$cache_file"
         fi
 
