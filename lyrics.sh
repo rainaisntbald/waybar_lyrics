@@ -71,7 +71,7 @@ while true; do
                 echo "    [cache miss] fetching from API…"
             fi
 
-            echo "🎶 $(truncate_text "$title - $artist")"
+            echo "🎶 $(truncate_text "Loading lyrics for $title - $artist")"
 
             sleep 2 # Sleep to allow playerctl to update metadata fully, avoids incorrect api calls
 
