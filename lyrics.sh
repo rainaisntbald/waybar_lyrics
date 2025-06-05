@@ -142,10 +142,10 @@ while true; do
             fi
         done <<< "$last_lyrics"
 
-        if [[ -n "$current_line" ]]; then
-            echo "🎶 $(truncate_text "$current_line")"
-        else
+        if [[ -z "${current_line//[[:space:]]/}" ]]; then
             echo "🎶 $(truncate_text "$title - $artist")"
+        else
+            echo "🎶 $(truncate_text "$current_line")"
         fi
     else
         echo "🎵 $(truncate_text "$title - $artist")"
